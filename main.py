@@ -1,6 +1,6 @@
 # Expense tracker application
 
-from expense_manager import add_expense, view_expenses
+from expense_manager import add_expense, view_expenses, view_summary
 
 
 def menu():
@@ -8,7 +8,8 @@ def menu():
         print("\n===== Expense Tracker =====")
         print("1. Add Expense")
         print("2. View Expenses")
-        print("3. Exit")
+        print("3. View Summary")
+        print("4. Exit")
 
         choice = input("Enter choice: ")
 
@@ -26,6 +27,9 @@ def menu():
             view_expenses()
 
         elif choice == "3":
+            view_summary()
+
+        elif choice == "4":
             print("Goodbye 👋")
             break
 

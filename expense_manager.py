@@ -42,3 +42,31 @@ def view_expenses():
         print(
             f"{i}. ₹{exp['amount']} | {exp['category']} | {exp['note']} | {exp['date']}"
         )
+
+
+def view_summary():
+    expenses = load_expenses()
+
+    if not expenses:
+        print("No expenses found.")
+        return
+
+    total_amount = 0
+    category_totals = {}
+
+    for exp in expenses:
+        total_amount += exp["amount"]
+
+        category = exp["category"]
+        if category in category_totals:
+            category_totals[category] += exp["amount"]
+        else:
+            category_totals[category] = exp["amount"]
+
+    print("\n===== Expense Summary =====")
+    print(f"Total Expenses: {len(expenses)}")
+    print(f"Total Amount Spent: ₹{total_amount}")
+
+    print("\nSpending by Category:")
+    for category, amount in category_totals.items():
+        print(f"{category}: ₹{amount}")
