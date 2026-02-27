@@ -1,3 +1,5 @@
+# Expense tracker application
+
 from expense_manager import add_expense, view_expenses
 
 
