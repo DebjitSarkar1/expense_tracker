@@ -43,6 +43,6 @@ note_entry = tk.Entry(root)
 note_entry.pack()
 
 tk.Button(root, text="Add Expense", command=add_expense_gui).pack(pady=10)
-tk.Button(root, text="Show Summary (Check Terminal)", command=show_summary).pack()
+tk.Button(root, text="Show Summary", command=show_summary).pack()
 
 root.mainloop()
