@@ -48,8 +48,7 @@ def view_summary():
     expenses = load_expenses()
 
     if not expenses:
-        print("No expenses found.")
-        return
+        return "No expenses found."
 
     total_amount = 0
     category_totals = {}
@@ -63,10 +62,15 @@ def view_summary():
         else:
             category_totals[category] = exp["amount"]
 
-    print("\n===== Expense Summary =====")
-    print(f"Total Expenses: {len(expenses)}")
-    print(f"Total Amount Spent: ₹{total_amount}")
+    summary = f"Total Expenses: {len(expenses)}\n"
+    summary += f"Total Amount Spent: ₹{total_amount}\n\n"
 
-    print("\nSpending by Category:")
+    summary += "Spending by Category:\n"
     for category, amount in category_totals.items():
-        print(f"{category}: ₹{amount}")
+        summary += f"{category}: ₹{amount}\n"
+
+    return summary
+
+
+def get_expenses():
+    return load_expenses()

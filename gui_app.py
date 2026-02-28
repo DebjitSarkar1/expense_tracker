@@ -22,7 +22,8 @@ def add_expense_gui():
 
 
 def show_summary():
-    view_summary()
+    summary = view_summary()
+    messagebox.showinfo("Expense Summary", summary)
 
 
 root = tk.Tk()
